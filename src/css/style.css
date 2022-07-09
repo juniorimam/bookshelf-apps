@@ -1,0 +1,925 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #eff5fe;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #b6d1fc;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #a8c7fe;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 90px;
+  background-color: #fff;
+  color: #202832;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  width: fit-content;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  border: none;
+  outline: 2px solid #e2e6e9;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+input[type="submit"] {
+  background-color: #0a61e4;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid #0a61e4;
+}
+
+.inputWarning:focus {
+  outline: 2px solid #f12764 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.7s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.7s forwards;
+}
+
+::placeholder {
+  color: #c2c5c7;
+}
+
+.flex {
+  display: flex;
+}
+
+.mlrAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 100%;
+}
+
+.fwRegular {
+  font-weight: 400;
+}
+
+.fwBold {
+  font-weight: 500;
+}
+
+.tcWhite {
+  color: white;
+}
+
+.tcBlue {
+  color: #0a61e4;
+}
+
+.tcDarkGreen {
+  color: #487569;
+}
+
+.tcRed {
+  color: #f12764 !important;
+}
+
+.tcSecondary {
+  color: #858d9a;
+}
+
+/* === Header === */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 20px 0;
+}
+
+.headerList {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  filter: drop-shadow(0 8px 20px rgba(131, 131, 131, 0.3));
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px 40px;
+}
+
+.headerText {
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerText h2 {
+  align-items: center;
+}
+
+.headerItem {
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+#inputSearch {
+  margin: 0;
+  width: 300px;
+  padding: 12px 15px;
+}
+
+.btAddBook {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 7px 10px;
+  background-color: #0a61e4;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.5s;
+}
+
+.btAddBook > div:nth-child(1) {
+  background-color: #2a7cf6;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.btAddBook > div:nth-child(2) {
+  padding-left: 10px;
+}
+
+.btAddBook:hover {
+  background-color: #0050d0;
+  filter: drop-shadow(0 4px 20px rgba(42, 124, 246, 0.3));
+}
+
+.btAddBook:hover > div:nth-child(1) {
+  background-color: #116cff;
+}
+
+.headerList img {
+  transition: all 0.3s;
+}
+
+.headerList:hover img {
+  transform: rotate(15deg);
+}
+
+/* === Main === */
+.mainList {
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* === Bookshelf === */
+.unreadBooks,
+.readedBooks {
+  position: relative;
+  border-radius: 10px;
+}
+
+.unreadBooks {
+  background-color: #e7f0fe;
+}
+
+.readedBooks {
+  background-color: #d8f6ed;
+}
+
+.unreadBooksList,
+.readedBooksList {
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.unreadBooksTitle,
+.readedBooksTitle {
+  flex-direction: row;
+  height: fit-content;
+  align-items: center;
+  gap: 15px;
+}
+
+.unreadBooksTitle h4,
+.readedBooksTitle h4 {
+  letter-spacing: 2.5px;
+}
+
+#unreadBooksCount,
+#readedBooksCount {
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+#unreadBooksCount {
+  background-color: #b6d1fc;
+}
+
+#readedBooksCount {
+  background-color: #b5ddd2;
+}
+
+/* === Books Cards === */
+.booksCards {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.booksCardsList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-height: 1100px;
+  padding-right: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* === Book Card === */
+
+.bookCard {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  width: 48%;
+  height: 100%;
+}
+
+.bookCardDetails {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 30px 40px;
+  height: 100%;
+}
+
+.cardTitle {
+  flex-direction: column;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.cardButton {
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkRead,
+.deleteBook {
+  justify-content: center;
+  align-items: center;
+  background-color: #08ba76;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s;
+}
+
+.deleteBook {
+  background-color: transparent;
+  color: #f12764;
+  padding: 10px 15px;
+}
+
+#btDelete {
+  background-color: #f12764 !important;
+}
+
+.checkRead > span,
+.deleteBook > span {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.checkRead:hover {
+  background-color: #3bb178;
+}
+
+.deleteBook:hover {
+  filter: brightness(0.9);
+}
+
+/* === Unread Scrollbar === */
+
+#unreadBooksList::-webkit-scrollbar,
+#readedBooksList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#unreadBooksList::-webkit-scrollbar-track {
+  background: #eff5fe;
+}
+
+#unreadBooksList::-webkit-scrollbar-thumb {
+  background: #b6d1fc;
+}
+
+#unreadBooksList::-webkit-scrollbar-thumb:hover {
+  background: #a8c7fe;
+}
+
+/* === Readed Scrollbar === */
+
+#readedBooksList::-webkit-scrollbar-track {
+  background: #cee8e1;
+}
+
+#readedBooksList::-webkit-scrollbar-thumb {
+  background: #90b6ab;
+}
+
+#readedBooksList::-webkit-scrollbar-thumb:hover {
+  background: #6b9086;
+}
+
+/* === Form Background === */
+.formBg {
+  position: fixed;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+}
+
+/* === Form === */
+.formAddBook,
+.deleteConfirm {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.formAddBookList {
+  flex-direction: column;
+  padding: 40px 50px;
+  gap: 20px;
+}
+
+.formAddBookTitle {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e6e9;
+  padding-bottom: 20px;
+}
+
+.btCloseForm {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f12764;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btCloseForm:hover {
+  opacity: 0.8;
+}
+
+.formInputAddBook {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxInput {
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.boxInput:nth-child(4) {
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.boxInput > label:is(.inputJudul, .inputPenulis)::after {
+  content: "*max characters 50";
+  color: red;
+  font-size: 0.7em;
+  padding-left: 10px;
+  opacity: 0.7;
+}
+
+.boxInput > label.inputTahun::after {
+  content: "*input number only / correct year";
+  color: red;
+  font-size: 0.7em;
+  padding-left: 10px;
+  opacity: 0.7;
+}
+
+#lengthJudul,
+#lengthPenulis {
+  font-size: 0.7em;
+}
+
+/* === Notify === */
+.addBookNotify,
+.deleteNotify {
+  position: fixed;
+  z-index: 99;
+  right: 5%;
+  bottom: 5%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.addBookNotify {
+  background-color: #08ba76;
+}
+
+.deleteNotify {
+  background-color: #f12764;
+}
+
+.addBookNotifyDetails,
+.deleteNotifyDetails {
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+/* === Empty Books === */
+.emptyBooks {
+  position: relative;
+  background-color: #e7f0fe;
+  border-radius: 10px;
+}
+
+.emptyBooksDetails {
+  flex-direction: row;
+  padding: 50px 100px;
+  align-items: center;
+  height: 450px;
+}
+
+.emptyBooksText {
+  flex-direction: column;
+  flex-basis: 50%;
+  gap: 10px;
+}
+
+.emptyBooksImg {
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.emptyBooksButton {
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+lottie-player {
+  width: 100%;
+}
+
+/* === Footer === */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerList {
+  flex-direction: row;
+  background-color: #e7f0fe;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.footerDetails {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.footerButton {
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.footerButton > div {
+  transition: all 0.3s;
+}
+
+.footerButton > div:hover {
+  opacity: 0.8;
+}
+
+/* === Media Query === */
+/* === Mobile === */
+@media only screen and (min-width: 320px) and (max-width: 632px) {
+  body {
+    padding: 0 0 75px;
+    font-size: 0.8em;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .header {
+    padding-top: 10px;
+  }
+
+  .headerList {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .headerItem {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0px;
+  }
+
+  #searchBook {
+    width: 100%;
+    margin-right: 45px;
+  }
+
+  #inputSearch {
+    width: 100%;
+  }
+
+  #addBook > div:nth-child(2) {
+    display: none;
+  }
+
+  .unreadBooksList,
+  .readedBooksList {
+    padding: 20px 30px;
+  }
+
+  .unreadBooksTitle,
+  .readedBooksTitle {
+    justify-content: space-between;
+  }
+
+  .booksCardsList {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .bookCard {
+    width: 100%;
+  }
+
+  .bookCardDetails {
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .cardButton {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .checkRead {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .deleteBook span {
+    display: none;
+  }
+
+  .formAddBook,
+  .deleteConfirm {
+    width: 90%;
+  }
+
+  .formAddBookList {
+    padding: 30px;
+  }
+
+  #lengthJudul,
+  #lengthPenulis {
+    font-size: 0.9em;
+  }
+
+  .addBookNotify,
+  .deleteNotify {
+    transform: translateX(-50%);
+    left: 50%;
+    right: unset;
+    width: 80%;
+  }
+
+  .emptyBooksDetails {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 35px;
+    height: fit-content;
+  }
+
+  .emptyBooksButton {
+    margin-top: 20px;
+  }
+
+  .textBtAddBookEmpty {
+    text-align: left;
+    display: block !important;
+  }
+}
+
+/* === Tablet === */
+@media only screen and (min-width: 633px) and (max-width: 768px) {
+  body {
+    padding: 0 0 75px;
+    font-size: 0.8em;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .headerList {
+    padding: 15px 20px;
+  }
+
+  .headerItem {
+    gap: 0;
+  }
+
+  #searchBook {
+    width: 100%;
+    margin-right: 45px;
+  }
+
+  #inputSearch {
+    width: 100%;
+  }
+
+  #addBook > div:nth-child(2) {
+    display: none;
+  }
+
+  .unreadBooksList,
+  .readedBooksList {
+    padding: 30px;
+  }
+
+  .booksCardsList {
+    gap: 20px;
+  }
+
+  .booksCard {
+    width: 100%;
+  }
+
+  .bookCardDetails {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .cardButton {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .checkRead {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .deleteBook span {
+    display: none;
+  }
+
+  .formAddBook {
+    width: 90%;
+  }
+
+  .formAddBookList {
+    padding: 30px 40px;
+  }
+
+  .boxInput {
+    font-size: 1.2em;
+  }
+
+  #lengthJudul,
+  #lengthPenulis {
+    font-size: 0.9em;
+  }
+
+  .emptyBooksDetails {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 35px;
+    height: fit-content;
+  }
+
+  .emptyBooksButton {
+    margin-top: 20px;
+  }
+
+  .textBtAddBookEmpty {
+    text-align: left;
+    display: block !important;
+  }
+}
+
+/* === Large Tablet / Laptop === */
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  body {
+    padding: 0 0 75px;
+    font-size: 0.8em;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .headerList {
+    padding: 15px 20px;
+  }
+
+  .headerItem {
+    gap: 0;
+  }
+
+  #searchBook {
+    width: 100%;
+    margin-right: 45px;
+  }
+
+  #inputSearch {
+    width: 100%;
+  }
+
+  .btAddBook {
+    width: 80%;
+  }
+
+  .unreadBooksList,
+  .readedBooksList {
+    padding: 30px;
+  }
+
+  .formAddBook {
+    width: 90%;
+  }
+
+  .booksCardsList {
+    gap: 25px;
+  }
+
+  .booksCard {
+    width: 100%;
+  }
+
+  .booksCardsList {
+    gap: 20px;
+  }
+
+  .booksCard {
+    width: 100%;
+  }
+
+  .bookCardDetails {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .formAddBookList {
+    padding: 30px 40px;
+  }
+
+  .boxInput {
+    font-size: 1.2em;
+  }
+
+  .emptyBooksDetails {
+    padding: 60px;
+    height: fit-content;
+  }
+
+  .emptyBooksButton {
+    margin-top: 20px;
+  }
+
+  .emptyBooksButton .btAddBook {
+    width: 100%;
+  }
+}
+
+/* === Large Dekstop === */
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
