@@ -296,6 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
         formAddBook.setAttribute("hidden", "");
         formBg.setAttribute("hidden", "");
         deleteBookSection.setAttribute("hidden", "");
+        inputDelete.value = "";
+        btDelete.setAttribute("disabled", "");
       });
     });
 
@@ -303,6 +305,8 @@ document.addEventListener("DOMContentLoaded", () => {
       formAddBook.setAttribute("hidden", "");
       formBg.setAttribute("hidden", "");
       deleteBookSection.setAttribute("hidden", "");
+      inputDelete.value = "";
+      btDelete.setAttribute("disabled", "");
     });
 
     inputJudul.addEventListener("input", () => {
