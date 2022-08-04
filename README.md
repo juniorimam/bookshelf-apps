@@ -22,6 +22,8 @@ You can delete your book if you want, but if you need a deleted book, you have t
 - CSS
 - Javascript
 
-## Author
+---
 
-This website was created by [Junior Imam Nugroho](https://github.com/juniorimam)
+[![https://vercel.com](src/image/powered-by-vercel.svg)](https://vercel.com)
+
+Created by [@juniorimam](https://github.com/juniorimam)
