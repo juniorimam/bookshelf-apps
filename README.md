@@ -3,7 +3,7 @@
 ![thumbnail](src/image/app.png)
 
 <p align="center">
-<a href="https://juniorimam.github.io/bookshelf-apps" style="text-decoration:none;">Go to Demo Page</a>
+<a href="https://bookshelfapps-jr.vercel.app/" style="text-decoration:none;">Go to Demo Page</a>
 </p>
 
 This project was created to complete the Front-End Web for Beginners class from Dicoding.
